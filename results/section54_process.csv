@@ -1,0 +1,5 @@
+pair,policy,seed,pid,name,refs,start,finish,elapsed,major_faults,minor_faults,evicted_pages,false_lru_cross,false_lru_self,sync_wait_ticks,barriers_passed,dedicated,slowdown
+section54,global_lru,0,0,small-53MB*,336360,0,31631662,31631662,157248,3392,158840,1067,156201,0,0,336360,94.04109287667974
+section54,global_lru,0,1,large-58MB*,368220,0,31852098,31852098,159152,3712,160674,1047,158009,0,0,368220,86.50290043995437
+section54,token_lru,0,0,small-53MB*,336360,0,634029,634029,1481,3392,2873,0,0,0,0,336360,1.8849714591509097
+section54,token_lru,0,1,large-58MB*,368220,0,1179086,1179086,6664,3712,6664,1477,3371,0,0,368220,3.202123730378578

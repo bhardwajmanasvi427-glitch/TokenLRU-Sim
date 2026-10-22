@@ -1,0 +1,8 @@
+digraph G { rankdir=LR; fontname="Helvetica"; node [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#f4f3ef", color="#52514e"]; edge [color="#52514e", fontname="Helvetica", fontsize=9];
+label="Simulator architecture (CONCEPTUAL)"; labelloc=t;
+wl [label="workloads/\ngenerators + catalog\n(synthetic traces)"]; cfg [label="config.py\nSimConfig"];
+sim [label="simulator.py\ndiscrete-event loop\nround-robin CPU, shared FIFO disk\nfault service, swapping status", fillcolor="#dbe7f7"];
+mem [label="memory.py\nframes, resident/in-flight,\nglobal-LRU candidate"]; proc [label="process.py\nProcess, Workload"];
+subgraph cluster_p { label="policies/ (pluggable)"; style=dashed; base [label="base.py\nReplacementPolicy hooks"]; glru [label="global_lru.py\nbaseline (no token code)", fillcolor="#dbe7f7"]; tlru [label="token_lru.py\ntoken, protection, exception,\nsuitability, cooldown", fillcolor="#fbe0d3"]; }
+met [label="metrics.py\nformulas + CSV"]; exp [label="experiments/\nrun_all, summarize, make_plots"]; out [label="results/*.csv\nplots/*.png"];
+wl->sim; cfg->sim; proc->sim; mem->sim; sim->base [label="hooks"]; base->glru; base->tlru; sim->met; met->exp; exp->out; }

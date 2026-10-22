@@ -1,0 +1,17 @@
+digraph G { rankdir=TB; fontname="Helvetica"; node [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#f4f3ef", color="#52514e"]; edge [fontname="Helvetica", fontsize=10, color="#52514e"];
+label="Token-ordered LRU: fault handling and victim selection (CONCEPTUAL, paper Sec. 5.2-5.3)"; labelloc=t;
+f [label="Process references page P\nP not resident"]; m [label="First touch?", shape=diamond, fillcolor="#ffffff"];
+minor [label="Minor fault:\nzero-fill, no I/O"]; major [label="Major fault: set swapping status ON"];
+short [label="Free frame exists?", shape=diamond, fillcolor="#ffffff"];
+req [label="Memory shortage:\nrequest token (before swap-in)", fillcolor="#fbe0d3"];
+free_tok [label="Token available?", shape=diamond, fillcolor="#ffffff"];
+assign [label="Pick eligible swapping process\n(random order; skip token-unsuitable)", fillcolor="#fbe0d3"];
+victim [label="Select victim: global LRU scan\nSKIP process holding token AND swapping", fillcolor="#fbe0d3"];
+found [label="Victim found\nin other processes?", shape=diamond, fillcolor="#ffffff"];
+exc [label="Exception handler:\nevict LRU page of protected process", fillcolor="#fbe0d3"];
+mon [label="Case 1 monitor: holder keeps\nself-supplying? -> release + unsuitable", fillcolor="#fbe0d3"];
+io [label="Reserve frame, start swap-in (disk queue)"]; done [label="I/O done: page resident,\nprocess dispatched -> swapping status OFF\n(protection ends)"];
+t2 [label="Case 2: hold time > threshold?\n-> release + unsuitable (cooldown)", fillcolor="#fbe0d3"]; ex [label="Process exits -> token released", fillcolor="#fbe0d3"];
+f->m; m->minor [label="yes"]; m->major [label="no"]; major->short; short->io [label="yes"]; short->req [label="no"];
+req->free_tok; free_tok->assign [label="yes"]; free_tok->victim [label="no (held)"]; assign->victim; victim->found;
+found->io [label="yes"]; found->exc [label="no"]; exc->mon; mon->io; minor->short [style=dashed, label="needs frame"]; io->done; done->t2 [style=dashed]; done->ex [style=dashed]; }

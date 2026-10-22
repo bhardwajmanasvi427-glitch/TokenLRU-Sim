@@ -1,0 +1,7 @@
+digraph G { rankdir=TB; fontname="Helvetica"; node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f4f3ef", color="#52514e"]; edge [fontname="Helvetica", fontsize=9, color="#52514e"];
+label="Timeline of one token episode (CONCEPTUAL)"; labelloc=t; splines=ortho;
+a1 [label="1. A major-faults, memory full\nswapping(A)=ON"]; a2 [label="2. A requests token\n(token available) -> A holds token", fillcolor="#fbe0d3"];
+a3 [label="3. B faults: victim scan SKIPS A\n(protected_skips++), takes LRU page of B", fillcolor="#fbe0d3"];
+a4 [label="4. A's swap-in completes,\nA dispatched: swapping(A)=OFF\nprotection ends, A keeps token"]; a5 [label="5. A computes normally;\nits true-LRU pages are evictable again"];
+a6 [label="6. A faults again -> swapping ON,\nprotected again (token still held)", fillcolor="#fbe0d3"]; a7 [label="7. A exits (or forced release:\nCase 1 / Case 2)\ntoken available again", fillcolor="#fbe0d3"];
+a1->a2->a3->a4->a5->a6->a7; }

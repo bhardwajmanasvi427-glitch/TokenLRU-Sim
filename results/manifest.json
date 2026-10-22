@@ -1,0 +1,52 @@
+{
+  "scale": 0.125,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "chosen_shortage": {
+    "gzip_vortex3": 0.4,
+    "bitr_gcc": 0.4,
+    "vortex3_gcc": 0.4,
+    "vortex1_vortex3": 0.5,
+    "lu1_lu2": 0.2
+  },
+  "section54": {
+    "pair": "section54",
+    "label": "Sec. 5.4: 53 MB + 58 MB, 60 MB memory",
+    "scale": 0.25,
+    "small_pages": 3392,
+    "large_pages": 3712,
+    "capacity_pages": 3840,
+    "shortage_vs_sum": 0.45945945945945943,
+    "synthetic": true
+  },
+  "degradation_threshold": 1.5,
+  "cfg_overrides": {},
+  "default_config": {
+    "capacity_pages": 1024,
+    "page_size": 4096,
+    "cpu_cost": 1,
+    "io_time": 100,
+    "quantum": 50,
+    "start_time": 0,
+    "seed": 0,
+    "token_assignment": "random",
+    "max_hold_ticks": null,
+    "unsuitable_cooldown_ticks": 200000,
+    "self_supply_window": 64,
+    "self_supply_ratio": 0.9,
+    "release_on_resolution": false,
+    "sync_priority": true,
+    "sync_transfer": false,
+    "sample_interval": 0,
+    "nap_window": 1000,
+    "check_invariants": false,
+    "log_events": true
+  },
+  "elapsed_wall_seconds": 680.2,
+  "note": "All workloads are SYNTHETIC; times are simulated ticks."
+}

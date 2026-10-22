@@ -1,0 +1,10 @@
+tiny demo (300 + 340 pages, 400 frames)  (synthetic; simulated ticks)
+
+== global_lru
+  A*   major faults  10206  elapsed  2045224  slowdown 145.78
+  B*   major faults  10284  elapsed  2054866  slowdown 129.32
+
+== token_lru
+  A*   major faults    102  elapsed    34528  slowdown   2.46
+  B*   major faults    466  elapsed    72484  slowdown   4.56
+  token: {'token_acquisitions': 1, 'protected_skips': 244, 'fallback_evictions': 0} events: [(600, 'acquire', 0, ''), (34528, 'release_exit', 0, '')]

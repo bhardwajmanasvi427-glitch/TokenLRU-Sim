@@ -1,0 +1,13 @@
+regime,shortage,seeds_sync_better_than_random,seeds_sync_worse_than_random,seeds_identical,seeds_xfer_better_than_sync,n
+hold100k,0.3,3,1,2,6,6
+hold100k,0.4,5,1,0,6,6
+hold100k,0.5,3,3,0,2,6
+hold250k,0.3,3,0,3,6,6
+hold250k,0.4,2,4,0,6,6
+hold250k,0.5,6,0,0,0,6
+per-fault,0.3,6,0,0,5,6
+per-fault,0.4,6,0,0,6,6
+per-fault,0.5,6,0,0,4,6
+retain,0.3,0,0,6,6,6
+retain,0.4,0,0,6,6,6
+retain,0.5,0,0,6,6,6

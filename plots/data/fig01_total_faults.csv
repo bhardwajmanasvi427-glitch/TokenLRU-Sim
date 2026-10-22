@@ -1,0 +1,11 @@
+pair,policy,mean,std
+bitr_gcc,global_lru,5520.2,10.56882207249233
+bitr_gcc,token_lru,5104.0,12.589678312014184
+gzip_vortex3,global_lru,4167.0,27.856776554368253
+gzip_vortex3,token_lru,4096.0,25.990382836734092
+lu1_lu2,global_lru,50380.0,0.0
+lu1_lu2,token_lru,5268.0,0.0
+vortex1_vortex3,global_lru,1664.2,535.3141133951168
+vortex1_vortex3,token_lru,1654.4,534.1514766430961
+vortex3_gcc,global_lru,4230.8,113.7044414260058
+vortex3_gcc,token_lru,2747.8,53.176122461119725

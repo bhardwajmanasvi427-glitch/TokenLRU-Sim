@@ -1,0 +1,3 @@
+pair,policy,seed,capacity_pages,wall_seconds,makespan,idle_ticks,cpu_utilisation,disk_busy_ticks,disk_requests,total_major_faults,total_minor_faults,completion_order,policy_evictions,victim_scan_steps,token_acquisitions,token_transfers,token_releases,forced_release_self_supply,forced_release_timeout,release_on_exit,release_on_resolution,sync_priority_assignments,sync_transfers,protected_skips,fallback_evictions,holder_self_fallbacks
+section54,global_lru,0,3840,4.981,31852098,31463918,0.012186952331993956,31640000,316400,316400,7104,small-53MB* > large-58MB*,319514,639028,,,,,,,,,,,,
+section54,token_lru,0,3840,0.93,1179086,482651,0.5906566611765385,814500,8145,8145,7104,small-53MB* > large-58MB*,9537,34827,1,0,1,0,0,1,0,0,0,3321,0,0
